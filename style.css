@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;display:grid;place-items:center;background:radial-gradient(circle at 15% 15%,#fff 0 4%,transparent 24%),radial-gradient(circle at 90% 85%,#fff 0 4%,transparent 22%),linear-gradient(135deg,#fff7fa,#ffe3ee 55%,#fff5f9);color:#75465b;font-family:'DM Sans',sans-serif}
+.page{width:min(94vw,680px);min-height:100vh;padding:48px 15px 28px;display:flex;align-items:center;flex-direction:column;text-align:center;position:relative;z-index:2}
+.top-label{font-size:.67rem;font-weight:700;letter-spacing:.2em;color:#bd7895;margin-bottom:12px}
+h1{font:600 clamp(2.1rem,7vw,3.5rem)/1.12 'Playfair Display',serif;color:#9c5474;margin:0}
+h1 span{color:#e58aad}
+.subtitle{color:#9b7183;margin:12px 0 0}
+.stage{height:340px;width:min(92vw,450px);display:grid;place-items:center;position:relative;perspective:1000px;margin:15px 0 0}
+.envelope{width:min(80vw,365px);height:225px;position:relative;transform-style:preserve-3d;filter:drop-shadow(0 18px 20px #ae5b7f29);cursor:pointer}
+.back{position:absolute;inset:0;background:#f6a9c6;border-radius:8px}
+.front{position:absolute;inset:0;z-index:4;background:linear-gradient(145deg,#f9c0d5,#ef9fbd);clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);border-radius:8px}
+.flap{position:absolute;inset:0;z-index:5;background:linear-gradient(145deg,#ffd2e2,#f3abc7);clip-path:polygon(0 0,100% 0,50% 61%);transform-origin:top center;transition:transform .85s cubic-bezier(.2,.75,.25,1),z-index .1s .4s;backface-visibility:hidden}
+.seal{position:absolute;z-index:6;top:48%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:white;font-size:1.6rem;background:#d96f9b;box-shadow:0 3px 8px #b95e8244;transition:opacity .25s,transform .4s}
+.letter{position:absolute;z-index:2;left:5%;bottom:5px;width:90%;height:310px;padding:12px;border-radius:9px;background:#fffdfd;box-shadow:0 5px 18px #9d587522;transition:transform 1s cubic-bezier(.2,.75,.25,1),z-index .1s .45s}
+.paper{height:100%;border:1px solid #f7d5e2;border-radius:6px;padding:13px 17px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.flower{font-size:1.35rem;margin-bottom:2px}
+.dear{font-size:.62rem;letter-spacing:.18em;color:#c17a98;font-weight:700}
+h2{font:600 1.9rem 'Playfair Display',serif;color:#c85f8b;margin:3px 0 8px}
+.paper p{font-size:.72rem;line-height:1.48;color:#79576a;max-width:295px;margin:0 0 8px}
+.signoff{font-size:.67rem;color:#9b7183;margin-top:3px}
+.signature{font:italic 1.05rem 'Playfair Display',serif;color:#c45e88;margin-top:3px}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .letter{transform:translateY(-190px);z-index:3;transition-delay:.15s}
+.envelope.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.5)}
+button{border:0;border-radius:999px;padding:14px 25px;font:700 .92rem 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-3px);box-shadow:0 10px 20px #d96f9b55}
+.primary{background:#d96f9b;color:#fff;box-shadow:0 7px 16px #d96f9b44}
+.primary span{margin-left:6px}
+.secondary{margin-top:10px;background:#b97b98;color:#fff}
+[hidden]{display:none!important}
+.hint{color:#a77b8e;font-size:.78rem;margin:12px 0 0}
+.bottom{margin-top:auto;padding-top:25px;color:#b18499;font-size:.75rem}
+.bottom span{color:#df8eae}
+.twinkle{position:absolute;color:#e8a0bc;font-size:1.6rem;animation:twinkle 2s ease-in-out infinite}
+.t1{top:45px;left:5%}.t2{top:75px;right:5%;animation-delay:.8s}
+.petals span{position:fixed;z-index:1;color:#e6a0ba;opacity:.48;font-size:clamp(20px,3vw,31px);animation:float 8s ease-in-out infinite}
+.petals span:nth-child(1){top:12%;left:8%}.petals span:nth-child(2){top:25%;right:9%;animation-delay:1s}.petals span:nth-child(3){bottom:18%;left:13%;animation-delay:2s}.petals span:nth-child(4){bottom:28%;right:12%;animation-delay:3s}.petals span:nth-child(5){top:52%;left:4%;animation-delay:2.5s}.petals span:nth-child(6){bottom:8%;right:30%;animation-delay:1.2s}
+.confetti-piece{position:fixed;top:-25px;z-index:10;pointer-events:none;animation:fall 3s ease-in forwards;font-size:20px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(12deg)}}
+@keyframes twinkle{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@media(max-width:420px){.page{padding-top:38px}.stage{height:315px}.letter{height:295px}.paper{padding:9px 12px}.paper p{font-size:.67rem}.envelope.open .letter{transform:translateY(-175px)}}
